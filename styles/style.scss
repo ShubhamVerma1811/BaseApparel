@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+@mixin flexInfo($display, $direction, $justifyContent) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+}
+
+$font: "Josefin Sans", "Open Sans";
+$boxSizing: border-box;
+$primaryColor-DesaturatedRed: hsl(0, 36%, 70%);
+$primaryColor-SoftRed: hsl(0, 93%, 68%);
+$neutralColor-DarkGrayishRed: hsl(0, 6%, 24%);
+
+* {
+  box-sizing: $boxSizing;
+}
+
+body {
+  font-family: $font;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  @include flexInfo(flex, row, space-between);
+  align-items: center;
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.info-container {
+  @include flexInfo(flex, column, center);
+  height: 100vh;
+  margin-left: 150px;
+
+  & .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 150px;
+    margin-top: 50px;
+    width: max-content;
+    align-self: flex-start;
+  }
+
+  & .title {
+    margin: auto auto;
+    width: 500px;
+    & h1 {
+      font-size: 90px;
+      text-transform: uppercase;
+      line-height: 100px;
+      letter-spacing: 15px;
+      color: $neutralColor-DarkGrayishRed;
+      margin: 0;
+
+      &::before {
+        content: "We're";
+        font-weight: 300;
+        display: block;
+        color: $primaryColor-DesaturatedRed;
+      }
+    }
+  }
+
+  & .store-info {
+    width: 500px;
+    & p {
+      color: $primaryColor-DesaturatedRed;
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+}
+
+.heroImage {
+  img {
+    height: 100vh;
+  }
+  & img:last-of-type {
+    display: none;
+  }
+}
+
+.email-field {
+  position: relative;
+  & input {
+    border: 1px solid $primaryColor-DesaturatedRed;
+    width: 500px;
+    height: 50px;
+    text-indent: 20px;
+    border-radius: 90px;
+    &::placeholder {
+      font-family: $font;
+      color: $primaryColor-DesaturatedRed;
+    }
+  }
+
+  .email-field-button {
+    button {
+      box-shadow: 8px 5px 10px $primaryColor-DesaturatedRed;
+      height: 50px;
+      width: 90px;
+      border: none;
+      border-radius: 40px;
+      background-image: linear-gradient(
+        to right,
+        hsl(0, 80%, 86%),
+        hsl(0, 74%, 74%)
+      );
+      position: absolute;
+      top: 0;
+      left: 50;
+      right: 0;
+    }
+    & :hover {
+      cursor: pointer;
+      background-image: linear-gradient(
+        to right,
+        hsl(0, 80%, 86%),
+        hsl(0, 58%, 82%)
+      );
+    }
+  }
+}
+
+.container {
+  width: 100%;
+}
+
+// * MEDIA QUERIES
+// #region
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .heroImage {
+    img {
+      display: none;
+    }
+    & img:last-of-type {
+      display: block;
+    }
+  }
+}
+
+// #endregion
+// * MEDIA QUERIES
