@@ -16,6 +16,11 @@ $neutralColor-DarkGrayishRed: hsl(0, 6%, 24%);
   box-sizing: $boxSizing;
 }
 
+a {
+  color: grey;
+  text-decoration: none;
+}
+
 body {
   font-family: $font;
   font-size: 16px;
@@ -34,7 +39,7 @@ body {
 
 .info-container {
   @include flexInfo(flex, column, center);
-  height: 100vh;
+  height: 1000px;
   margin-left: 150px;
 
   & .logo {
@@ -74,6 +79,10 @@ body {
       font-size: 20px;
       line-height: 30px;
     }
+  }
+  & .foo {
+    position: relative;
+    top: 100px;
   }
 }
 

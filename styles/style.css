@@ -4,6 +4,11 @@
           box-sizing: border-box;
 }
 
+a {
+  color: grey;
+  text-decoration: none;
+}
+
 body {
   font-family: "Josefin Sans", "Open Sans";
   font-size: 16px;
@@ -42,7 +47,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
+  height: 1000px;
   margin-left: 150px;
 }
 
@@ -88,6 +93,11 @@ body {
   color: #ce9797;
   font-size: 20px;
   line-height: 30px;
+}
+
+.info-container .foo {
+  position: relative;
+  top: 100px;
 }
 
 .heroImage img {
