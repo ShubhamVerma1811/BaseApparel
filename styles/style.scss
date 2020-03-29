@@ -32,6 +32,7 @@ body {
   @include flexInfo(flex, row, space-between);
   align-items: center;
   background-image: url(../images/bg-pattern-desktop.svg);
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,7 +40,7 @@ body {
 
 .info-container {
   @include flexInfo(flex, column, center);
-  height: 1000px;
+  height: 100%;
   margin-left: 150px;
 
   & .logo {
@@ -87,8 +88,9 @@ body {
 }
 
 .heroImage {
+  height: 100vh;
   img {
-    height: 100vh;
+    height: 100%;
   }
   & img:last-of-type {
     display: none;
